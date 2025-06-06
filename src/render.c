@@ -9,7 +9,7 @@
 void svgHeader(FILE *f, int width, int height) {
     fprintf(f, "<svg xmlns='http://www.w3.org/2000/svg' width='%d' height='%d' viewBox='0 0 %d %d'>\n",
             width, height, width, height);
-    fprintf(f, "<g stroke='white' stroke-width='1' fill='none'>\n");
+    fprintf(f, "<g stroke='black' stroke-width='1' fill='none'>\n");
 }
 
 void svgFooter(FILE *f) {
@@ -20,7 +20,6 @@ void drawLSystem(Word* instructions, double angleDelta, double step, const char*
     double x = 0.0, y = 0.0, angle = 90.0;
     double minX = x, minY = y, maxX = x, maxY = y;
 
-    // === Pass 1: Calculate bounding box (starting at 90°) ===
     for (size_t i = 0; i < instructions->currSize; i++) {
         char c = instructions->data[i];
         if (c == 'F') {
@@ -39,12 +38,11 @@ void drawLSystem(Word* instructions, double angleDelta, double step, const char*
         }
     }
 
-    double width = maxX - minX + 10.0;  // Padding of 5 on each side
+    double width = maxX - minX + 10.0;
     double height = maxY - minY + 10.0;
     double offsetX = -minX + 5.0;
     double offsetY = -minY + 5.0;
 
-    // === Pass 2: Draw to SVG ===
     FILE* svg = fopen(filename, "w");
     if (!svg) {
         perror("Error opening SVG file");
@@ -76,7 +74,7 @@ void drawLSystem(Word* instructions, double angleDelta, double step, const char*
         }
     }
 
-    fprintf(svg, "\" fill=\"none\" stroke=\"white\" stroke-width=\"1\" />\n");
+    fprintf(svg, "\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" />\n");
     fprintf(svg, "</svg>\n");
     fclose(svg);
 }
