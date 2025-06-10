@@ -5,7 +5,9 @@
 The library contains code that reads a user-defined configuration file containing the axiom, production rules, iteration depth, and drawing parameters like the angle shift. It applies the rewriting rules over several iterations to produce a final string representation, which is then interpreted to generate an SVG output visualizing the L-system.
 
 ## Limitations
-There are still a few limitations of the library, notably there being no support for branching rules and the limit of only a single production rule. These limitations will be removed soon.
+There are still a few limitations of the library:
+- Supports only one production rule currently
+- Supports exclusively the alphabet set {'F','+','-','\[','\]'}
 
 ## Example
 Here is an example config file (the config file has to be named start_conf):
