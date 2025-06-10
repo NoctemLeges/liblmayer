@@ -20,6 +20,6 @@ int main(){
         string = applyRule(string,rule);
         
     }
-    printArrData(string);
+    //printArrData(string);
     drawLSystem(string, delta,5.0, "quadKoch.svg");
 }
