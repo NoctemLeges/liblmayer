@@ -21,5 +21,5 @@ int main(){
         
     }
     //printArrData(string);
-    drawLSystem(string, delta,5.0, "quadKoch.svg");
+    drawLSystem(string, delta,5.0, "example.svg");
 }
