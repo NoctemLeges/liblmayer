@@ -10,3 +10,6 @@ bush2: Bushes/Bush2/bush2.c
 
 triangle1: Triangles/Triangle1/triangle1.c
 	$(CC) $(SRC) $< -o Triangles/Triangle1/$@ $(CFLAGS)
+
+triangle2: Triangles/Triangle2/triangle2.c
+	$(CC) $(SRC) $< -o Triangles/Triangle2/$@ $(CFLAGS)
