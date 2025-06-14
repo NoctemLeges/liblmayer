@@ -1,4 +1,0 @@
-Axiom:F
-Rule:F->FF-[-F+F+F]+[+F-F-F]
-Delta:22
-Length:5
