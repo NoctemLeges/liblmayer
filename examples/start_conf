@@ -1,0 +1,5 @@
+Axiom:F
+Rule:F->F[+FF][-FF]F[-F][+F]F
+Delta:35
+Length:4
+
