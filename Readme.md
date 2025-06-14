@@ -7,7 +7,7 @@ The library contains code that reads a user-defined configuration file containin
 ## Limitations
 There are still a few limitations of the library:
 - Supports only one production rule currently
-- Supports exclusively the alphabet set {'F','+','-','\[','\]'}
+- Supports exclusively the alphabet set {English Alphabets,'+','-','\[','\]'}
 
 ## Example
 Here is an example config file (the config file has to be named start_conf):
