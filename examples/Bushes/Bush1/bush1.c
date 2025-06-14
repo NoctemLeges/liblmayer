@@ -19,11 +19,7 @@ int main(){
     int length;
     int delta;
     parseConfig(Axiom,&rule,&length,&delta,fp);
-    Word *string = Axiom;
-    for(int i = 0;i<length;i++){
-        string = applyRule(string,rule);
-        
-    }
+    Word *string = strexp(Axiom,rule,length);
     //printArrData(string);
     drawLSystem(string, delta,5.0, "bush1.svg");
 }

@@ -14,3 +14,11 @@ Word* applyRule(Word* string,Rule rule){
     }
     return temp;
 }
+
+Word* strexp(Word* Axiom, Rule rule,int length){
+    Word *string = Axiom;
+    for(int i = 0;i<length;i++){
+        string = applyRule(string,rule);
+    }
+    return string;
+}

@@ -13,3 +13,9 @@ triangle1: Triangles/Triangle1/triangle1.c
 
 triangle2: Triangles/Triangle2/triangle2.c
 	$(CC) $(SRC) $< -o Triangles/Triangle2/$@ $(CFLAGS)
+
+MA1: MultiAlphabet/MA1/MA1.c
+	$(CC) $(SRC) $< -o MultiAlphabet/MA1/$@ $(CFLAGS)
+
+MA2: MultiAlphabet/MA2/MA2.c
+	$(CC) $(SRC) $< -o MultiAlphabet/MA2/$@ $(CFLAGS)
