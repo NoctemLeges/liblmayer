@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include "../includes/word.h"
 #include "../includes/rule.h"
-void parseConfig(Word* Axiom,Rule* rule,int* length, int* delta){
-    FILE *fp = fopen("start_conf","r"); //There is a pathing issue here. Only workd when invoked from the ignore directory.
+void parseConfig(Word* Axiom,Rule* rule,int* length, int* delta,FILE* fp){
+    //FILE *fp = fopen("start_conf","r"); //There is a pathing issue here. Only workd when invoked from the ignore directory.
     if (fp == NULL) {
         perror("Error opening file");
     }

@@ -2,5 +2,6 @@
 #define PARSECONF_H
 #include "rule.h"
 #include "word.h"
-void parseConfig(Word* Axiom,Rule* rule,int* length, int* delta);
+#include <stdio.h>
+void parseConfig(Word* Axiom,Rule* rule,int* length, int* delta,FILE* fp);
 #endif
