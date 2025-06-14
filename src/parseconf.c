@@ -25,18 +25,29 @@ void parseConfig(Word* Axiom,Rule* rule,int* length, int* delta,FILE* fp){
         }
  
         else if(line[0]=='R'){
-            rule->predecessor = 'F';
+            
             Word* succ = (Word*)malloc(sizeof(Word));
             initArr(succ,2);
-            int parsing = 0;
+            int parsing_succ = 0;
+            int parsing_pred = 0;
             for (int i = 0; line[i] != '\n'; i++) {
                 char c = line[i];
-                if (parsing) {
+                if (parsing_succ) {
                     if (c != '\n' && c != '\r')
                         append(succ, c);
                 }
+                if(parsing_pred){
+                    if(c == '-'){
+                        parsing_pred = 0;
+                        continue;
+                    }
+                    rule->predecessor = c;
+                }
                 if (c == '>') {
-                    parsing = 1;
+                    parsing_succ = 1;
+                }
+                if (c == ':') {
+                    parsing_pred = 1;
                 }
             }
             rule->successor = succ->data;

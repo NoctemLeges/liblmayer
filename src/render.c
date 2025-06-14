@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <ctype.h>
 #include "../includes/word.h"
 #include "../includes/rule.h"
 
@@ -53,7 +54,7 @@ void drawLSystem(Word* instructions, double angleDelta, double step, const char*
     
     for (size_t i = 0; i < instructions->currSize; i++) {
         char c = instructions->data[i];
-        if (c == 'F') {
+        if (isalpha(c)) {
             double newX = x + step * cos(angle * M_PI / 180.0);
             double newY = y + step * sin(angle * M_PI / 180.0);
             if (newX < minX) minX = newX;
@@ -101,7 +102,7 @@ void drawLSystem(Word* instructions, double angleDelta, double step, const char*
 
     for (size_t i = 0; i < instructions->currSize; i++) {
         char c = instructions->data[i];
-        if (c == 'F') {
+        if (isalpha(c)) {
             double newX = x + step * cos(angle * M_PI / 180.0);
             double newY = y + step * sin(angle * M_PI / 180.0);
             fprintf(svg, "<line x1=\"%f\" y1=\"%f\" x2=\"%f\" y2=\"%f\" />\n",
