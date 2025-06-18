@@ -1,0 +1,6 @@
+Axiom:X 
+NumRules:2
+Rule:F->FF 
+Rule:X->F+[-F-XF-X][+FF][--XF[+X]][++F-X]
+Delta:20
+Length:7

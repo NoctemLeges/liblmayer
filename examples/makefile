@@ -20,4 +20,10 @@ MA1: MultiAlphabet/MA1/MA1.c
 MA2: MultiAlphabet/MA2/MA2.c
 	$(CC) $(SRC) $< -o MultiAlphabet/MA2/$@ $(CFLAGS)
 
-all: bush1 bush2 triangle1 triangle2 MA1 MA2
+tree1: Trees/Tree1/tree1.c
+	$(CC) $(SRC) $< -o Trees/Tree1/$@ $(CFLAGS)
+
+tree2: Trees/Tree2/tree2.c
+	$(CC) $(SRC) $< -o Trees/Tree2/$@ $(CFLAGS)
+
+all: bush1 bush2 triangle1 triangle2 MA1 MA2 tree1 tree2
