@@ -1,5 +1,6 @@
 Axiom:W
-Rule:W->WW+[+W-WW+W]-[-W+W+W]
+NumRules:1
+Rule:W->WW+[+W-W-W+W]-[-W+W+W]
 Delta:22
 Length:4
 

@@ -1,4 +1,5 @@
 Axiom:FF+FF+FF+FF
+NumRules:1
 Rule:F->F+F-F-F+F
 Delta:90
 Length:5

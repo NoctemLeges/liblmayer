@@ -3,5 +3,6 @@
 #include "rule.h"
 #include "word.h"
 #include <stdio.h>
-void parseConfig(Word* Axiom,Rule* rule,int* length, int* delta,FILE* fp);
+void parseNumRules(int* numRules,FILE* fp);
+void parseConfig(Word* Axiom,Rule* rules,int* length, int* delta,FILE* fp);
 #endif

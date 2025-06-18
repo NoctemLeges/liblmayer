@@ -1,25 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <math.h>
-#include "../../../includes/word.h"
 #include "../../../includes/rule.h"
+#include "../../../includes/word.h"
 #include "../../../includes/parseconf.h"
 #include "../../../includes/strexp.h"
 #include "../../../includes/render.h"
 
 int main(){
+    
     FILE* fp = fopen("bush1_conf","r");
     if(fp==NULL){
-        printf("Error in opening file. You sure you in the Bushes directory?\n");
+        perror("Error opening bush1_conf");
+        exit(1);
     }
+    int NumRules;
     Word* Axiom = (Word*)malloc(sizeof(Word));
     initArr(Axiom,50);
-    Rule rule;
-    int length;
-    int delta;
-    parseConfig(Axiom,&rule,&length,&delta,fp);
-    Word *string = strexp(Axiom,rule,length);
-    //printArrData(string);
-    drawLSystem(string, delta,5.0, "bush1.svg");
+    int Delta;
+    int Length;
+    parseNumRules(&NumRules,fp);
+    Rule* rules = (Rule*)malloc(sizeof(Rule)*NumRules);
+    parseConfig(Axiom,rules,&Length,&Delta,fp);
+    //Expand the Axiom with the Rules
+    Word* string = (Word*)malloc(sizeof(Word));
+    initArr(string,50);
+    string = strexp(Axiom,rules,NumRules,Length);
+    drawLSystem(string,Delta,5.0,"bush1.svg");
 }

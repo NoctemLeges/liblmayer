@@ -1,4 +1,5 @@
 Axiom:F
+NumRules:1
 Rule:F->F[+FF][-FF]F[-F][+F]F
 Delta:35
 Length:4
