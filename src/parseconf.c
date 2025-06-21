@@ -59,6 +59,7 @@ void parseConfig(Word* Axiom, Rule* rules, int* length, int* delta, FILE* fp) {
                 }
                 
             }
+            append(succ,'\0');
             rules[counter].predecessor = pred;
             rules[counter].successor = succ->data;
             counter++;    
