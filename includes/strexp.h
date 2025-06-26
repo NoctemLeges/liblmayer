@@ -2,5 +2,5 @@
 #define STREXP_H
 #include "word.h"
 #include "rule.h"
-Word* strexp(Word*,Rule*,int,int);
+Word* strexp(Word* Axiom,Rule* rules,int numRules,int length);
 #endif
