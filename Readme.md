@@ -1,4 +1,22 @@
 # liblmayer
+## Contents
+- [Overview](#overview)
+- [What is an L-System](#what-is-an-l-system)
+    - [How it Works](#how-it-works)
+    - [Formal Definition](#formal-definition)
+- [How liblmayer works](#how-liblmayer-works)
+    - [Features](#features)
+    - [Configuration File Format](#configuration-file-format)
+    - [Configuration File Parsing](#configuration-file-parsing)
+    - [Axiom Expansion using Production Rules](#axiom-expansion-using-production-rules)
+    - [Convert to SVG](#convert-to-svg)
+    - [Helper Data Structures](#helper-data-structures)
+- [Example L-System renderings](#example-l-system-renderings)
+    - [Square Sierpinski](#square-sierpinski)
+    - [A Rather Beautiful Tree](#a-rather-beautiful-tree)
+- [Usage](#usage)
+
+ 
 ## Overview 
 liblmayer is a modular C library designed to provide functionality to parse and interpret L-system (Lindenmayer system) configurations and render them as SVG graphics.
 
@@ -110,6 +128,7 @@ Delta:90
 Length:5
 ```
 - Finished Render:
+
 ![Square Sierpinski](examples/MultiAlphabet/MA2/MA2.svg)
 
 ---
@@ -125,6 +144,16 @@ Delta:20
 Length:7
 ```
 - Finished Render:
+
 ![Tree](examples/Trees/Tree1/tree1.svg)
+
+---
+
+## Usage
+- Copy the includes and src folders in your project.
+- Include the required headers (for e.g. #include <render.h> or #include <word.h>)
+- Make sure to compile the src files before linking them with the main executable. For example, the compile line can be something like:
+`gcc src/* example.c -o example`
+- This would create the required executable
 
 
