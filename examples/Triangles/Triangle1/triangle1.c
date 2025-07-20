@@ -26,5 +26,5 @@ int main(){
     Word* string = (Word*)malloc(sizeof(Word));
     initArr(string,50);
     string = strexp(Axiom,rules,NumRules,Length);
-    drawLSystem(string,Delta,5.0,"triangle1.svg");
+    drawLSystem(string,Delta,5.0,"triangle1.svg",0);
 }

@@ -1,4 +1,5 @@
-Axiom:X 
+Axiom:X
+NumRules:3 
 Rule:F->FX[FX[+XF]] 
 Rule:X->FF[+XZ++X-F[+ZX]][-X++F-X] 
 Rule:Z->[+F-X-F][++ZX]

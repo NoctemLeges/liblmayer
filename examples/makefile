@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -lm
-SRC = ../src/word.c ../src/parseconf.c ../src/render.c ../src/strexp.c
+SRC = ../src/*
 
 bush1: Bushes/Bush1/bush1.c
 	$(CC) $(SRC) $< -o Bushes/Bush1/$@ $(CFLAGS)
