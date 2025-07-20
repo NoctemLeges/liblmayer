@@ -11,6 +11,7 @@
     - [Axiom Expansion using Production Rules](#axiom-expansion-using-production-rules)
     - [Convert to SVG](#convert-to-svg)
     - [Helper Data Structures](#helper-data-structures)
+    - [Branch Depth Tracking](#branch-depth-tracking)
 - [Example L-System renderings](#example-l-system-renderings)
     - [Square Sierpinski](#square-sierpinski)
     - [A Rather Beautiful Tree](#a-rather-beautiful-tree)
@@ -73,6 +74,7 @@ Where:
 - Supports multiple rules and customizable parameters.
 - Outputs an SVG file that visually represents the L-system after expansion.
 - Implements turtle graphics with turn angles (Delta) and line segments.
+- Tracks Branch Depth to differentiate between 'trunk' and 'leaves' in tree-like renders.
 
 ### Configuration File Format:
 A plain text file defining:
@@ -89,7 +91,7 @@ Length: Number of iterations to apply the production rules.
 ### Axiom Expansion using Production Rules:
 - Use `Word* strexp(Word* Axiom,Rule* rules,int numRules,int length)` to expand **Axiom** using the production **rules** for **length** number of times.
 ### Convert to SVG:
-- Use `void drawLSystem(Word* instructions, double angleDelta, double step, const char* filename)` to convert the expanded string, or **instructions** into an SVG file with the name **filename**. **angleDelta** is the angle rotated by the [turtle](https://en.wikipedia.org/wiki/Turtle_graphics) while drawing and **step** is the length of each forward stroke.
+- Use `void drawLSystem(Word* instructions, double angleDelta, double step, const char* filename, int isTree)` to convert the expanded string, or **instructions** into an SVG file with the name **filename**. **angleDelta** is the angle rotated by the [turtle](https://en.wikipedia.org/wiki/Turtle_graphics) while drawing and **step** is the length of each forward stroke. **isTree** can be set by the user to enable the Branch Depth tracking.
 ### Helper Data Structures:
 - `Word.h`:
 ```
@@ -114,6 +116,12 @@ typedef struct Rule{
 }Rule;
 ```
 A simple structure to store the rules as mappings from a single character to a string.
+
+### Branch Depth Tracking
+`void drawLSystem(Word* instructions, double angleDelta, double step, const char* filename, int isTree)` uses the **isTree** integer (0/1) to toggle Branch Depth Tracking. If it is set to 1, every open square bracket *[* increases the branch counter by 1. Similarly, every closed square bracket *]* decreases it by 1. If the counter passes a **THRESHOLD=3** the subsequent lines are drawn green to simulate leaves. Otherwise they are drawn as brown.
+
+Here is an example render with branch depth tracking enabled:
+![Branch Depth Tracking Example](examples/Trees/Tree3/tree3.svg)
 
 ---
 
@@ -155,5 +163,5 @@ Length:7
 - Make sure to compile the src files before linking them with the main executable. For example, the compile line can be something like:
 `gcc src/* example.c -o example`
 - This would create the required executable
-
+---
 

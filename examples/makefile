@@ -26,4 +26,7 @@ tree1: Trees/Tree1/tree1.c
 tree2: Trees/Tree2/tree2.c
 	$(CC) $(SRC) $< -o Trees/Tree2/$@ $(CFLAGS)
 
+tree3: Trees/Tree3/tree3.c
+	$(CC) $(SRC) $< -o Trees/Tree3/$@ $(CFLAGS)
+
 all: bush1 bush2 triangle1 triangle2 MA1 MA2 tree1 tree2
