@@ -1,32 +1,33 @@
 CC = gcc
+INC = -I../includes
 CFLAGS = -Wall -lm
 SRC = ../src/*
 
 bush1: Bushes/Bush1/bush1.c
-	$(CC) $(SRC) $< -o Bushes/Bush1/$@ $(CFLAGS)
+	$(CC) $(INC) $(SRC) $< -o Bushes/Bush1/$@ $(CFLAGS)
 
 bush2: Bushes/Bush2/bush2.c
-	$(CC) $(SRC) $< -o Bushes/Bush2/$@ $(CFLAGS)
+	$(CC) $(INC) $(SRC) $< -o Bushes/Bush2/$@ $(CFLAGS)
 
 triangle1: Triangles/Triangle1/triangle1.c
-	$(CC) $(SRC) $< -o Triangles/Triangle1/$@ $(CFLAGS)
+	$(CC) $(INC) $(SRC) $< -o Triangles/Triangle1/$@ $(CFLAGS)
 
 triangle2: Triangles/Triangle2/triangle2.c
-	$(CC) $(SRC) $< -o Triangles/Triangle2/$@ $(CFLAGS)
+	$(CC) $(INC) $(SRC) $< -o Triangles/Triangle2/$@ $(CFLAGS)
 
 MA1: MultiAlphabet/MA1/MA1.c
-	$(CC) $(SRC) $< -o MultiAlphabet/MA1/$@ $(CFLAGS)
+	$(CC) $(INC) $(SRC) $< -o MultiAlphabet/MA1/$@ $(CFLAGS)
 
 MA2: MultiAlphabet/MA2/MA2.c
-	$(CC) $(SRC) $< -o MultiAlphabet/MA2/$@ $(CFLAGS)
+	$(CC) $(INC) $(SRC) $< -o MultiAlphabet/MA2/$@ $(CFLAGS)
 
 tree1: Trees/Tree1/tree1.c
-	$(CC) $(SRC) $< -o Trees/Tree1/$@ $(CFLAGS)
+	$(CC) $(INC) $(SRC) $< -o Trees/Tree1/$@ $(CFLAGS)
 
 tree2: Trees/Tree2/tree2.c
-	$(CC) $(SRC) $< -o Trees/Tree2/$@ $(CFLAGS)
+	$(CC) $(INC) $(SRC) $< -o Trees/Tree2/$@ $(CFLAGS)
 
 tree3: Trees/Tree3/tree3.c
-	$(CC) $(SRC) $< -o Trees/Tree3/$@ $(CFLAGS)
+	$(CC) $(INC) $(SRC) $< -o Trees/Tree3/$@ $(CFLAGS)
 
-all: bush1 bush2 triangle1 triangle2 MA1 MA2 tree1 tree2
+all: bush1 bush2 triangle1 triangle2 MA1 MA2 tree1 tree2 tree3

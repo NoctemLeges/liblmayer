@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../../../includes/rule.h"
-#include "../../../includes/word.h"
-#include "../../../includes/parseconf.h"
-#include "../../../includes/strexp.h"
-#include "../../../includes/render.h"
+#include "rule.h"
+#include "word.h"
+#include "parseconf.h"
+#include "strexp.h"
+#include "render.h"
 
 int main(){
     
