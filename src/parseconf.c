@@ -84,17 +84,19 @@ void parseConfig(Word* Axiom, Rule* rules, int* length, int* delta, FILE* fp) {
                     pred_parsing = 0;
                     continue;
                 }
+                if(line[i]==',' && succ_parsing){
+                    succ_parsing = 0;
+                    continue;
+                }
                 if(line[i]=='>'){
                     succ_parsing = 1;
                     continue;
                 }
                 if(pred_parsing){
-                    //printf("1%c",line[i]);
                     pred = line[i];
                     
                 }
                 if(succ_parsing){
-                    //printf("2%c",line[i]);
                     append(succ,line[i]);
                 }
                 
@@ -110,6 +112,7 @@ void parseConfig(Word* Axiom, Rule* rules, int* length, int* delta, FILE* fp) {
             }
             rules[counter].predecessor = pred;
             rules[counter].successor = succ->data;
+            sscanf(line,"Rule:%*c->%*[^,],%f",&rules[counter].probability); //For now, every rule must be of the format %c->%s,%f
             counter++;
                
         }
