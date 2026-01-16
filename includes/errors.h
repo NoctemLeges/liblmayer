@@ -1,3 +1,5 @@
+#ifndef ERRORS_H
+#define ERRORS_H
 typedef enum{
     LMAYER_CONF_FILE_OPENING_ERROR, //parseconf.c 
     LMAYER_AXIOM_MISSING, //parseconf.c 
@@ -16,3 +18,5 @@ typedef enum{
 }ErrorCodes;
 
 const char* strError(ErrorCodes error);
+
+#endif
