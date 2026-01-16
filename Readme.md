@@ -12,6 +12,7 @@
     - [Convert to SVG](#convert-to-svg)
     - [Helper Data Structures](#helper-data-structures)
     - [Branch Depth Tracking](#branch-depth-tracking)
+- [Stochastic L-System](#stochastic-l-system)
 - [Example L-System renderings](#example-l-system-renderings)
     - [Square Sierpinski](#square-sierpinski)
     - [A Rather Beautiful Tree](#a-rather-beautiful-tree)
@@ -122,6 +123,32 @@ A simple structure to store the rules as mappings from a single character to a s
 
 Here is an example render with branch depth tracking enabled:
 ![Branch Depth Tracking Example](examples/Trees/Tree3/tree3.svg)
+
+---
+
+## Stochastic L-System
+### What is it?
+A **stochastic L-system** is a type of formal grammar used in procedural modeling where production rules are applied **probabilistically** rather than **deterministically**. 
+
+Starting from an initial string (axiom), symbols are rewritten over multiple iterations, but when a symbol has multiple possible productions, one is chosen at random according to **assigned probabilities**. This introduces controlled randomness into the growth process, allowing the same system to generate many different yet structurally similar forms.
+
+Stochastic L-systems are especially effective for modeling natural phenomena such as plants, trees, and organic branching patterns, where variation is essential for realism.
+
+### A Stochastic Example using liblmayer
+To generate an SVG stochastically, no major change in the code itself is required. One must only change the config file. An example config for a Stochastic generation looks like:
+```
+Axiom:F
+NumRules:3
+Rule:F->FF-[-F+F+F]+[+F-F-F],50
+Rule:F->FF+[+F-F]-[-F+F],30
+Rule:F->F[-F][+F],20
+Delta:22.5
+Length:4
+```
+Notice how the probabilities are written next to the rule, seperated by a commma and no space. **This format is mandatory.**
+
+This generates the following Shrub:
+![Stochastic L-System Example](examples/StochasticSystems/Shrub/shrub.svg)
 
 ---
 
