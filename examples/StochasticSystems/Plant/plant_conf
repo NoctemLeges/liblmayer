@@ -1,0 +1,7 @@
+Axiom:F
+NumRules:3
+Rule:F->F[+F]F[-F]F,33
+Rule:F->F[+F]F,33
+Rule:F->F[-F]F,34
+Delta:22.5
+Length:4

@@ -165,3 +165,5 @@ Length:7
 - This would create the required executable
 ---
 
+## Discovered Issues
+- There seems to be a rendering issue while rendering the Hilbert Curve. Maybe something in render.c?

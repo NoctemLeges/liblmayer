@@ -15,6 +15,7 @@ const char* strError(ErrorCodes error){
         case LMAYER_EMPTY_RULE_SUCC: return "Production rule missing successor in config file.";
         case LMAYER_EMPTY_DELTA: return "Delta empty in config file.";
         case LMAYER_EMPTY_LENGTH: return "Expansion depth (Length) empty in config file.";
+        case LMAYER_TOTAL_PROB_NOT_100: return "Total Probability is not 100 for a Predecessor.";
         default: return "Unknown Error.";
         
     }
