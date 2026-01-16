@@ -113,6 +113,7 @@ void parseConfig(Word* Axiom, Rule* rules, int* length, int* delta, FILE* fp) {
             rules[counter].predecessor = pred;
             rules[counter].successor = succ->data;
             sscanf(line,"Rule:%*c->%*[^,],%f",&rules[counter].probability); //For now, every rule must be of the format %c->%s,%f
+            if(rules[counter].probability == 0.0) rules[counter].probability = 100.0;
             counter++;
                
         }

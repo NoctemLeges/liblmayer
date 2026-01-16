@@ -29,4 +29,10 @@ tree2: Trees/Tree2/tree2.c
 tree3: Trees/Tree3/tree3.c
 	$(CC) $(SRC) $< -o Trees/Tree3/$@ $(CFLAGS)
 
-all: bush1 bush2 triangle1 triangle2 MA1 MA2 tree1 tree2
+shrub: StochasticSystems/Shrub/shrub.c
+	$(CC) $(SRC) $< -o StochasticSystems/Shrub/$@ $(CFLAGS)
+
+plant: StochasticSystems/Plant/plant.c
+	$(CC) $(SRC) $< -o StochasticSystems/Plant/$@ $(CFLAGS)
+
+all: bush1 bush2 triangle1 triangle2 MA1 MA2 tree1 tree2 tree3 shrub plant
