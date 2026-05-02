@@ -40,7 +40,7 @@ Word* strexp(Word* Axiom, Rule* rules,int numRules,int length){
             for(int k = 0;k<numRules;k++){
                 if(string->data[j]==rules[k].predecessor){
                     matched = 1;
-                    float random = 1 + (rand()/RAND_MAX)*(100 - 1);
+                    float random = 1 + ((float)rand()/(float)RAND_MAX)*(100 - 1);
                     if(random <= rules[k].probability) appendCharWise(temp,rules[k].successor);
                     else continue;
                 }
